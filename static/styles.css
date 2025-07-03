@@ -1,3 +1,6 @@
+.card-header i {
+    transition: transform 0.3s ease;
+}
 .card-body.expanded {
     max-height: 400px;
     overflow-y: auto;
