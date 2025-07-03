@@ -76,27 +76,10 @@
 
 <script>
 function toggleCard(headerElement) {
-    const clickedCard = headerElement.closest('.source-card');
-    const clickedBody = clickedCard.querySelector('.card-body');
-    const clickedIcon = headerElement.querySelector('i');
-
-    const allCards = document.querySelectorAll('.source-card');
-
-    allCards.forEach(card => {
-        const body = card.querySelector('.card-body');
-        const icon = card.querySelector('.card-header i');
-
-        if (card === clickedCard) {
-            // Toggle the clicked one
-            const isExpanded = body.classList.contains('expanded');
-            body.classList.toggle('expanded', !isExpanded);
-            icon.style.transform = !isExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
-        } else {
-            // Collapse all others
-            body.classList.remove('expanded');
-            icon.style.transform = 'rotate(0deg)';
-        }
-    });
-}
+        const cardBody = headerElement.nextElementSibling;
+        const icon = headerElement.querySelector('i');
+        cardBody.classList.toggle('expanded');
+        icon.style.transform = cardBody.classList.contains('expanded') ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
 </script>
 {% endblock %}
