@@ -1,0 +1,14 @@
+.card-body.expanded {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.card-body.expanded::-webkit-scrollbar {
+    width: 8px;
+}
+
+.card-body.expanded::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
